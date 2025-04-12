@@ -8,4 +8,14 @@ import java.util.List;
 
 public interface ProductService {
     ProductResponseDto createProduct(ProductRequestDto dto);
+    //Get a page of Products
+    Page<ProductResponseDto> searchProducts(int page, int pageSize, String sortDirection, String sortBy);
+    //Get a page of products, filtered by category
+    Page<ProductResponseDto> searchProductsByCategory(
+            String category,
+            int page,
+            int pageSize,
+            String sortDirection,
+            String sortBy
+    );
 }
